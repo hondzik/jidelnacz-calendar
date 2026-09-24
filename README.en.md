@@ -2,6 +2,22 @@
 
 [Česká verze](README.md)
 
+[![GitHub Release](https://img.shields.io/github/release/hondzik/jidelnacz-calendar.svg?style=for-the-badge)](https://github.com/hondzik/jidelnacz-calendar/releases)
+[![License](https://img.shields.io/github/license/hondzik/jidelnacz-calendar.svg?style=for-the-badge)](LICENSE)
+[![Project Maintenance](https://img.shields.io/badge/maintainer-hondzik-blue.svg?style=for-the-badge)](https://github.com/hondzik)
+![Github](https://img.shields.io/github/followers/hondzik.svg?style=for-the-badge)
+[![GitHub Activity](https://img.shields.io/github/last-commit/hondzik/jidelnacz-calendar?style=for-the-badge)](https://github.com/hondzik/jidelnacz-calendar/commits/main)
+
+## Table of contents <!-- omit from toc -->
+
+- [Description](#description)
+- [Installation](#installation)
+  - [HACS](#hacs)
+  - [Manual](#manual)
+- [Setup](#setup)
+- [Notes](#notes)
+
+## Description
 A Home Assistant integration that downloads ordered lunches from the Czech school-canteen
 service [jidelna.cz](https://www.jidelna.cz) and exposes them as **calendar entities**. Each
 diner linked to the account can be synced independently — which calendar it goes to, what the
@@ -14,6 +30,8 @@ The integration relies on jidelna.cz's unofficial REST API — see
 ## Installation
 
 ### HACS
+
+[![Open in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=hondzik&repository=jidelnacz-calendar&category=integration)
 
 1. HACS → Integrations → the three-dot menu → Custom repositories.
 2. Add `https://github.com/hondzik/jidelnacz-calendar` as type "Integration".
