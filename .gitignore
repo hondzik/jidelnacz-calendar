@@ -5,3 +5,9 @@ work/
 .coverage
 htmlcov/
 .venv*/
+venv/
+*.egg-info/
+
+# obsahuje přihlašovací údaje / tokeny
+.mcp.json
+.claude/settings.local.json

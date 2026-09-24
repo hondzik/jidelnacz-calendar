@@ -1,0 +1,222 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Jídelna.cz",
+        "description": "Enter your jidelna.cz login (diner ID or the main account e-mail) and password.",
+        "data": {
+          "login": "Username",
+          "heslo": "Password"
+        }
+      },
+      "diners": {
+        "title": "Diners",
+        "description": "Choose which diners to sync, and the daily update time.",
+        "data": {
+          "diners": "Diners",
+          "update_time": "Update time"
+        }
+      },
+      "diner_calendar": {
+        "title": "Calendar entity",
+        "menu_options": {
+          "diner_calendar_new": "Create a new entity",
+          "diner_calendar_pick": "Select an existing entity"
+        }
+      },
+      "diner_calendar_new": {
+        "title": "New calendar entity",
+        "data": {
+          "name": "Entity name"
+        }
+      },
+      "diner_calendar_pick": {
+        "title": "Select entity",
+        "data": {
+          "calendar_id": "Calendar entity"
+        }
+      },
+      "diner_content": {
+        "title": "Event content",
+        "data": {
+          "prefix": "Meal name prefix",
+          "location": "Location"
+        }
+      },
+      "diner_duration": {
+        "title": "Lunch duration",
+        "data": {
+          "duration_mode": "Lunch duration",
+          "distinguish_weeks": "Distinguish odd/even weeks"
+        }
+      },
+      "diner_times": {
+        "title": "Lunch time",
+        "data": {
+          "duration_minutes": "Lunch duration (minutes)",
+          "mon_from": "Monday – from",
+          "mon_to": "Monday – to",
+          "tue_from": "Tuesday – from",
+          "tue_to": "Tuesday – to",
+          "wed_from": "Wednesday – from",
+          "wed_to": "Wednesday – to",
+          "thu_from": "Thursday – from",
+          "thu_to": "Thursday – to",
+          "fri_from": "Friday – from",
+          "fri_to": "Friday – to"
+        },
+        "sections": {
+          "both": { "name": "Odd/Even week" },
+          "even": { "name": "Even week" },
+          "odd": { "name": "Odd week" }
+        }
+      },
+      "diner_times_confirm": {
+        "title": "Lunch time overview",
+        "description": "With a fixed duration, the end time is computed automatically:\n\n{prehled}"
+      },
+      "reauth_confirm": {
+        "title": "New password",
+        "description": "Authentication for {login} stopped working. Enter the current password.",
+        "data": {
+          "heslo": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid credentials.",
+      "cannot_connect": "Could not connect to jidelna.cz.",
+      "no_diners_found": "No diner was found on this account.",
+      "no_diners_selected": "Select at least one diner.",
+      "time_to_before_from": "The end time must be later than the start time."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Jídelna.cz",
+        "menu_options": {
+          "diners": "Diners",
+          "diner_settings": "Diner settings",
+          "schedule": "Update time",
+          "refresh_now": "Refresh now"
+        }
+      },
+      "diners": {
+        "title": "Diners",
+        "description": "Enable or disable synchronization for individual diners.",
+        "data": {
+          "diners": "Diners"
+        }
+      },
+      "diner_settings": {
+        "title": "Diner settings",
+        "data": {
+          "diner": "Diner"
+        }
+      },
+      "diner_calendar": {
+        "title": "Calendar entity",
+        "menu_options": {
+          "diner_calendar_new": "Create a new entity",
+          "diner_calendar_pick": "Select an existing entity"
+        }
+      },
+      "diner_calendar_new": {
+        "title": "New calendar entity",
+        "data": {
+          "name": "Entity name"
+        }
+      },
+      "diner_calendar_pick": {
+        "title": "Select entity",
+        "data": {
+          "calendar_id": "Calendar entity"
+        }
+      },
+      "diner_content": {
+        "title": "Event content",
+        "data": {
+          "prefix": "Meal name prefix",
+          "location": "Location"
+        }
+      },
+      "diner_duration": {
+        "title": "Lunch duration",
+        "data": {
+          "duration_mode": "Lunch duration",
+          "distinguish_weeks": "Distinguish odd/even weeks"
+        }
+      },
+      "diner_times": {
+        "title": "Lunch time",
+        "data": {
+          "duration_minutes": "Lunch duration (minutes)",
+          "mon_from": "Monday – from",
+          "mon_to": "Monday – to",
+          "tue_from": "Tuesday – from",
+          "tue_to": "Tuesday – to",
+          "wed_from": "Wednesday – from",
+          "wed_to": "Wednesday – to",
+          "thu_from": "Thursday – from",
+          "thu_to": "Thursday – to",
+          "fri_from": "Friday – from",
+          "fri_to": "Friday – to"
+        },
+        "sections": {
+          "both": { "name": "Odd/Even week" },
+          "even": { "name": "Even week" },
+          "odd": { "name": "Odd week" }
+        }
+      },
+      "diner_times_confirm": {
+        "title": "Lunch time overview",
+        "description": "With a fixed duration, the end time is computed automatically:\n\n{prehled}"
+      },
+      "schedule": {
+        "title": "Update time",
+        "data": {
+          "update_time": "Update time"
+        }
+      },
+      "refresh_now": {
+        "title": "Refresh now",
+        "description": "Immediately re-downloads the menu from jidelna.cz."
+      }
+    },
+    "error": {
+      "no_diners_selected": "Select at least one diner.",
+      "time_to_before_from": "The end time must be later than the start time.",
+      "refresh_failed": "Refresh failed."
+    },
+    "abort": {
+      "cannot_connect": "Could not connect to jidelna.cz.",
+      "no_diners_configured": "No diner is configured.",
+      "refresh_done": "The menu has been refreshed."
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Refresh menu",
+      "description": "Immediately re-downloads the menu and recomputes calendar events.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Account",
+          "description": "The Jídelna.cz integration config entry."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "entry_not_found": {
+      "message": "Config entry not found."
+    },
+    "entry_not_loaded": {
+      "message": "Config entry is not loaded."
+    }
+  }
+}

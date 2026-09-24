@@ -1,0 +1,222 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Jídelna.cz",
+        "description": "Zadejte přihlašovací údaje na jidelna.cz (ID strávníka nebo e-mail hlavního účtu).",
+        "data": {
+          "login": "Přihlašovací jméno",
+          "heslo": "Heslo"
+        }
+      },
+      "diners": {
+        "title": "Strávníci",
+        "description": "Vyberte, které strávníky chcete synchronizovat, a čas denní aktualizace.",
+        "data": {
+          "diners": "Strávníci",
+          "update_time": "Čas aktualizace"
+        }
+      },
+      "diner_calendar": {
+        "title": "Kalendářová entita",
+        "menu_options": {
+          "diner_calendar_new": "Založit novou entitu",
+          "diner_calendar_pick": "Vybrat existující entitu"
+        }
+      },
+      "diner_calendar_new": {
+        "title": "Nová kalendářová entita",
+        "data": {
+          "name": "Název entity"
+        }
+      },
+      "diner_calendar_pick": {
+        "title": "Výběr entity",
+        "data": {
+          "calendar_id": "Kalendářová entita"
+        }
+      },
+      "diner_content": {
+        "title": "Obsah události",
+        "data": {
+          "prefix": "Textový prefix názvu jídla",
+          "location": "Místo"
+        }
+      },
+      "diner_duration": {
+        "title": "Délka oběda",
+        "data": {
+          "duration_mode": "Délka oběda",
+          "distinguish_weeks": "Rozlišovat sudé a liché týdny"
+        }
+      },
+      "diner_times": {
+        "title": "Čas oběda",
+        "data": {
+          "duration_minutes": "Délka oběda (minuty)",
+          "mon_from": "Pondělí – čas od",
+          "mon_to": "Pondělí – čas do",
+          "tue_from": "Úterý – čas od",
+          "tue_to": "Úterý – čas do",
+          "wed_from": "Středa – čas od",
+          "wed_to": "Středa – čas do",
+          "thu_from": "Čtvrtek – čas od",
+          "thu_to": "Čtvrtek – čas do",
+          "fri_from": "Pátek – čas od",
+          "fri_to": "Pátek – čas do"
+        },
+        "sections": {
+          "both": { "name": "Sudý/Lichý týden" },
+          "even": { "name": "Sudý týden" },
+          "odd": { "name": "Lichý týden" }
+        }
+      },
+      "diner_times_confirm": {
+        "title": "Přehled časů oběda",
+        "description": "Čas do se u fixní délky dopočítává automaticky:\n\n{prehled}"
+      },
+      "reauth_confirm": {
+        "title": "Nové heslo",
+        "description": "Přihlášení pro {login} přestalo fungovat. Zadejte aktuální heslo.",
+        "data": {
+          "heslo": "Heslo"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Neplatné přihlašovací údaje.",
+      "cannot_connect": "Nelze se připojit k jidelna.cz.",
+      "no_diners_found": "Na účtu nebyl nalezen žádný strávník.",
+      "no_diners_selected": "Vyberte alespoň jednoho strávníka.",
+      "time_to_before_from": "Čas do musí být později než čas od."
+    },
+    "abort": {
+      "already_configured": "Tento účet je již nakonfigurován.",
+      "reauth_successful": "Přihlášení bylo obnoveno."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Jídelna.cz",
+        "menu_options": {
+          "diners": "Strávníci",
+          "diner_settings": "Nastavení strávníka",
+          "schedule": "Čas aktualizace",
+          "refresh_now": "Aktualizovat teď"
+        }
+      },
+      "diners": {
+        "title": "Strávníci",
+        "description": "Zapněte nebo vypněte synchronizaci jednotlivých strávníků.",
+        "data": {
+          "diners": "Strávníci"
+        }
+      },
+      "diner_settings": {
+        "title": "Nastavení strávníka",
+        "data": {
+          "diner": "Strávník"
+        }
+      },
+      "diner_calendar": {
+        "title": "Kalendářová entita",
+        "menu_options": {
+          "diner_calendar_new": "Založit novou entitu",
+          "diner_calendar_pick": "Vybrat existující entitu"
+        }
+      },
+      "diner_calendar_new": {
+        "title": "Nová kalendářová entita",
+        "data": {
+          "name": "Název entity"
+        }
+      },
+      "diner_calendar_pick": {
+        "title": "Výběr entity",
+        "data": {
+          "calendar_id": "Kalendářová entita"
+        }
+      },
+      "diner_content": {
+        "title": "Obsah události",
+        "data": {
+          "prefix": "Textový prefix názvu jídla",
+          "location": "Místo"
+        }
+      },
+      "diner_duration": {
+        "title": "Délka oběda",
+        "data": {
+          "duration_mode": "Délka oběda",
+          "distinguish_weeks": "Rozlišovat sudé a liché týdny"
+        }
+      },
+      "diner_times": {
+        "title": "Čas oběda",
+        "data": {
+          "duration_minutes": "Délka oběda (minuty)",
+          "mon_from": "Pondělí – čas od",
+          "mon_to": "Pondělí – čas do",
+          "tue_from": "Úterý – čas od",
+          "tue_to": "Úterý – čas do",
+          "wed_from": "Středa – čas od",
+          "wed_to": "Středa – čas do",
+          "thu_from": "Čtvrtek – čas od",
+          "thu_to": "Čtvrtek – čas do",
+          "fri_from": "Pátek – čas od",
+          "fri_to": "Pátek – čas do"
+        },
+        "sections": {
+          "both": { "name": "Sudý/Lichý týden" },
+          "even": { "name": "Sudý týden" },
+          "odd": { "name": "Lichý týden" }
+        }
+      },
+      "diner_times_confirm": {
+        "title": "Přehled časů oběda",
+        "description": "Čas do se u fixní délky dopočítává automaticky:\n\n{prehled}"
+      },
+      "schedule": {
+        "title": "Čas aktualizace",
+        "data": {
+          "update_time": "Čas aktualizace"
+        }
+      },
+      "refresh_now": {
+        "title": "Aktualizovat teď",
+        "description": "Okamžitě znovu stáhne jídelníček ze serveru jidelna.cz."
+      }
+    },
+    "error": {
+      "no_diners_selected": "Vyberte alespoň jednoho strávníka.",
+      "time_to_before_from": "Čas do musí být později než čas od.",
+      "refresh_failed": "Aktualizace se nezdařila."
+    },
+    "abort": {
+      "cannot_connect": "Nelze se připojit k jidelna.cz.",
+      "no_diners_configured": "Žádný strávník není nakonfigurovaný.",
+      "refresh_done": "Jídelníček byl aktualizován."
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Aktualizovat jídelníček",
+      "description": "Okamžitě znovu stáhne jídelníček a přepočítá kalendářové události.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Účet",
+          "description": "Konfigurační záznam integrace Jídelna.cz."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "entry_not_found": {
+      "message": "Konfigurace nebyla nalezena."
+    },
+    "entry_not_loaded": {
+      "message": "Konfigurace není načtená."
+    }
+  }
+}

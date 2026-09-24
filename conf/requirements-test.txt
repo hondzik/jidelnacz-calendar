@@ -1,0 +1,5 @@
+pytest
+pytest-cov
+requests-mock
+pytest-homeassistant-custom-component
+tzdata; sys_platform == "win32"

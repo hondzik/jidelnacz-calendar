@@ -1,0 +1,17 @@
+[tool.pytest.ini_options]
+# NEpřidávat "custom_components/jidelna" sem — integrace má vlastní calendar.py
+# (platforma `calendar`), a kdyby ten adresář byl globálně na sys.path po celou
+# dobu běhu pytestu, zastínil by stdlib modul `calendar` pro *cokoli* importované
+# později (typicky aiohttp/PyJWT přes pytest-homeassistant-custom-component) a
+# spadlo by to na `ImportError: cannot import name 'timegm' from ... 'calendar'`.
+# test_jidelna_api.py/test_events.py si sys.path pro bare import řeší samy,
+# lokálně a až v okamžiku vlastního importu (viz jejich hlavička).
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+include = ["**/jidelna_api.py", "**/events.py"]
+
+[tool.coverage.report]
+show_missing = true
