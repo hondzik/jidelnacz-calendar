@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.3...v0.1.4) (2026-09-25)
+
+
+### Bug Fixes
+
+* Update diner configuration to remove default values for prefix and location ([d6cc0c5](https://github.com/hondzik/jidelnacz-calendar/commit/d6cc0c5d4be0fa923c8b92b5629e25b833eef004))
+
 ## [0.1.3](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.2...v0.1.3) (2026-09-25)
 
 
