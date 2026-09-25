@@ -79,17 +79,9 @@ _LOGGER = logging.getLogger(__name__)
 
 CONF_UPDATE_TIME = "update_time"
 
-DURATION_OPTIONS = [
-    {"value": DURATION_ALL_DAY, "label": "Celodenní událost"},
-    {"value": DURATION_FIXED, "label": "Fixní délka"},
-    {"value": DURATION_PER_DAY, "label": "Každý den jiná"},
-]
+DURATION_OPTIONS = [DURATION_ALL_DAY, DURATION_FIXED, DURATION_PER_DAY]
 
-ALLERGENS_OPTIONS = [
-    {"value": ALLERGENS_HIDDEN, "label": "Nezobrazovat"},
-    {"value": ALLERGENS_NUMBERS, "label": "Pouze čísla"},
-    {"value": ALLERGENS_NAMES, "label": "Názvy"},
-]
+ALLERGENS_OPTIONS = [ALLERGENS_HIDDEN, ALLERGENS_NUMBERS, ALLERGENS_NAMES]
 
 WEEK_LABELS = {WEEK_BOTH: "Sudý/Lichý týden", WEEK_EVEN: "Sudý týden", WEEK_ODD: "Lichý týden"}
 WEEKDAY_LABELS = {
@@ -259,7 +251,9 @@ class _DinerWizardMixin:
                     DINER_ALLERGENS, default=current.get(DINER_ALLERGENS, ALLERGENS_NAMES)
                 ): selector.SelectSelector(
                     selector.SelectSelectorConfig(
-                        options=ALLERGENS_OPTIONS, mode=selector.SelectSelectorMode.LIST
+                        options=ALLERGENS_OPTIONS,
+                        mode=selector.SelectSelectorMode.LIST,
+                        translation_key=DINER_ALLERGENS,
                     )
                 ),
             }
@@ -283,7 +277,9 @@ class _DinerWizardMixin:
                     DINER_DURATION_MODE, default=current.get(DINER_DURATION_MODE, DURATION_ALL_DAY)
                 ): selector.SelectSelector(
                     selector.SelectSelectorConfig(
-                        options=DURATION_OPTIONS, mode=selector.SelectSelectorMode.LIST
+                        options=DURATION_OPTIONS,
+                        mode=selector.SelectSelectorMode.LIST,
+                        translation_key=DINER_DURATION_MODE,
                     )
                 ),
             }

@@ -3,125 +3,125 @@
     "step": {
       "user": {
         "title": "Jídelna.cz",
-        "description": "Zadejte přihlašovací údaje na jidelna.cz (ID strávníka nebo e-mail hlavního účtu).",
+        "description": "Enter your jidelna.cz login (diner ID or the main account e-mail) and password.",
         "data": {
-          "login": "Přihlašovací jméno",
-          "heslo": "Heslo"
+          "login": "Username",
+          "heslo": "Password"
         }
       },
       "diners": {
-        "title": "Strávníci",
-        "description": "Vyberte, které strávníky chcete synchronizovat, a čas denní aktualizace.",
+        "title": "Diners",
+        "description": "Choose which diners to sync, and the daily update time.",
         "data": {
-          "diners": "Strávníci",
-          "update_time": "Čas aktualizace"
+          "diners": "Diners",
+          "update_time": "Update time"
         }
       },
       "diner_calendar": {
-        "title": "Kalendářová entita",
+        "title": "Calendar entity",
         "menu_options": {
-          "diner_calendar_new": "Založit novou entitu",
-          "diner_calendar_pick": "Vybrat existující entitu"
+          "diner_calendar_new": "Create a new entity",
+          "diner_calendar_pick": "Select an existing entity"
         }
       },
       "diner_calendar_new": {
-        "title": "Nová kalendářová entita",
+        "title": "New calendar entity",
         "data": {
-          "name": "Název entity"
+          "name": "Entity name"
         }
       },
       "diner_calendar_pick": {
-        "title": "Výběr entity",
+        "title": "Select entity",
         "data": {
-          "calendar_id": "Kalendářová entita"
+          "calendar_id": "Calendar entity"
         }
       },
       "diner_content": {
-        "title": "Obsah události",
+        "title": "Event content",
         "data": {
-          "prefix": "Textový prefix názvu jídla",
-          "location": "Místo",
-          "allergens": "Zobrazit alergeny"
+          "prefix": "Meal name prefix",
+          "location": "Location",
+          "allergens": "Show allergens"
         }
       },
       "diner_duration": {
-        "title": "Délka oběda",
+        "title": "Lunch duration",
         "data": {
-          "duration_mode": "Délka oběda"
+          "duration_mode": "Lunch duration"
         }
       },
       "diner_weeks": {
-        "title": "Rozlišení týdnů",
+        "title": "Week distinction",
         "data": {
-          "distinguish_weeks": "Rozlišovat sudé a liché týdny"
+          "distinguish_weeks": "Distinguish odd/even weeks"
         }
       },
       "diner_times": {
-        "title": "Čas oběda",
+        "title": "Lunch time",
         "data": {
-          "duration_minutes": "Délka oběda (minuty)"
+          "duration_minutes": "Lunch duration (minutes)"
         },
         "sections": {
-          "both": { "name": "Sudý/Lichý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "both": { "name": "Odd/Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } },
-          "even": { "name": "Sudý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "even": { "name": "Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } },
-          "odd": { "name": "Lichý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "odd": { "name": "Odd week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } }
         }
       },
       "diner_times_confirm": {
-        "title": "Přehled časů oběda",
-        "description": "Čas do se u fixní délky dopočítává automaticky:\n\n{prehled}"
+        "title": "Lunch time overview",
+        "description": "With a fixed duration, the end time is computed automatically:\n\n{prehled}"
       },
       "reauth_confirm": {
-        "title": "Nové heslo",
-        "description": "Přihlášení pro {login} přestalo fungovat. Zadejte aktuální heslo.",
+        "title": "New password",
+        "description": "Authentication for {login} stopped working. Enter the current password.",
         "data": {
-          "heslo": "Heslo"
+          "heslo": "Password"
         }
       }
     },
     "error": {
-      "invalid_auth": "Neplatné přihlašovací údaje.",
-      "cannot_connect": "Nelze se připojit k jidelna.cz.",
-      "no_diners_found": "Na účtu nebyl nalezen žádný strávník.",
-      "no_diners_selected": "Vyberte alespoň jednoho strávníka.",
-      "time_to_before_from": "Čas do musí být později než čas od."
+      "invalid_auth": "Invalid credentials.",
+      "cannot_connect": "Could not connect to jidelna.cz.",
+      "no_diners_found": "No diner was found on this account.",
+      "no_diners_selected": "Select at least one diner.",
+      "time_to_before_from": "The end time must be later than the start time."
     },
     "abort": {
-      "already_configured": "Tento účet je již nakonfigurován.",
-      "reauth_successful": "Přihlášení bylo obnoveno."
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
     }
   },
   "options": {
@@ -129,152 +129,168 @@
       "init": {
         "title": "Jídelna.cz",
         "menu_options": {
-          "diners": "Strávníci",
-          "diner_settings": "Nastavení strávníka",
-          "schedule": "Čas aktualizace",
-          "refresh_now": "Aktualizovat teď"
+          "diners": "Diners",
+          "diner_settings": "Diner settings",
+          "schedule": "Update time",
+          "refresh_now": "Refresh now"
         }
       },
       "diners": {
-        "title": "Strávníci",
-        "description": "Zapněte nebo vypněte synchronizaci jednotlivých strávníků.",
+        "title": "Diners",
+        "description": "Enable or disable synchronization for individual diners.",
         "data": {
-          "diners": "Strávníci"
+          "diners": "Diners"
         }
       },
       "diner_settings": {
-        "title": "Nastavení strávníka",
+        "title": "Diner settings",
         "data": {
-          "diner": "Strávník"
+          "diner": "Diner"
         }
       },
       "diner_calendar": {
-        "title": "Kalendářová entita",
+        "title": "Calendar entity",
         "menu_options": {
-          "diner_calendar_new": "Založit novou entitu",
-          "diner_calendar_pick": "Vybrat existující entitu"
+          "diner_calendar_new": "Create a new entity",
+          "diner_calendar_pick": "Select an existing entity"
         }
       },
       "diner_calendar_new": {
-        "title": "Nová kalendářová entita",
+        "title": "New calendar entity",
         "data": {
-          "name": "Název entity"
+          "name": "Entity name"
         }
       },
       "diner_calendar_pick": {
-        "title": "Výběr entity",
+        "title": "Select entity",
         "data": {
-          "calendar_id": "Kalendářová entita"
+          "calendar_id": "Calendar entity"
         }
       },
       "diner_content": {
-        "title": "Obsah události",
+        "title": "Event content",
         "data": {
-          "prefix": "Textový prefix názvu jídla",
-          "location": "Místo",
-          "allergens": "Zobrazit alergeny"
+          "prefix": "Meal name prefix",
+          "location": "Location",
+          "allergens": "Show allergens"
         }
       },
       "diner_duration": {
-        "title": "Délka oběda",
+        "title": "Lunch duration",
         "data": {
-          "duration_mode": "Délka oběda"
+          "duration_mode": "Lunch duration"
         }
       },
       "diner_weeks": {
-        "title": "Rozlišení týdnů",
+        "title": "Week distinction",
         "data": {
-          "distinguish_weeks": "Rozlišovat sudé a liché týdny"
+          "distinguish_weeks": "Distinguish odd/even weeks"
         }
       },
       "diner_times": {
-        "title": "Čas oběda",
+        "title": "Lunch time",
         "data": {
-          "duration_minutes": "Délka oběda (minuty)"
+          "duration_minutes": "Lunch duration (minutes)"
         },
         "sections": {
-          "both": { "name": "Sudý/Lichý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "both": { "name": "Odd/Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } },
-          "even": { "name": "Sudý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "even": { "name": "Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } },
-          "odd": { "name": "Lichý týden", "data": {
-            "mon_from": "Pondělí – čas od",
-            "mon_to": "Pondělí – čas do",
-            "tue_from": "Úterý – čas od",
-            "tue_to": "Úterý – čas do",
-            "wed_from": "Středa – čas od",
-            "wed_to": "Středa – čas do",
-            "thu_from": "Čtvrtek – čas od",
-            "thu_to": "Čtvrtek – čas do",
-            "fri_from": "Pátek – čas od",
-            "fri_to": "Pátek – čas do"
+          "odd": { "name": "Odd week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
           } }
         }
       },
       "diner_times_confirm": {
-        "title": "Přehled časů oběda",
-        "description": "Čas do se u fixní délky dopočítává automaticky:\n\n{prehled}"
+        "title": "Lunch time overview",
+        "description": "With a fixed duration, the end time is computed automatically:\n\n{prehled}"
       },
       "schedule": {
-        "title": "Čas aktualizace",
+        "title": "Update time",
         "data": {
-          "update_time": "Čas aktualizace"
+          "update_time": "Update time"
         }
       },
       "refresh_now": {
-        "title": "Aktualizovat teď",
-        "description": "Okamžitě znovu stáhne jídelníček ze serveru jidelna.cz."
+        "title": "Refresh now",
+        "description": "Immediately re-downloads the menu from jidelna.cz."
       }
     },
     "error": {
-      "no_diners_selected": "Vyberte alespoň jednoho strávníka.",
-      "time_to_before_from": "Čas do musí být později než čas od.",
-      "refresh_failed": "Aktualizace se nezdařila."
+      "no_diners_selected": "Select at least one diner.",
+      "time_to_before_from": "The end time must be later than the start time.",
+      "refresh_failed": "Refresh failed."
     },
     "abort": {
-      "cannot_connect": "Nelze se připojit k jidelna.cz.",
-      "no_diners_configured": "Žádný strávník není nakonfigurovaný.",
-      "refresh_done": "Jídelníček byl aktualizován."
+      "cannot_connect": "Could not connect to jidelna.cz.",
+      "no_diners_configured": "No diner is configured.",
+      "refresh_done": "The menu has been refreshed."
+    }
+  },
+  "selector": {
+    "duration_mode": {
+      "options": {
+        "all_day": "All-day event",
+        "fixed": "Fixed duration",
+        "per_day": "Different each day"
+      }
+    },
+    "allergens": {
+      "options": {
+        "hidden": "Hidden",
+        "numbers": "Numbers only",
+        "names": "Names"
+      }
     }
   },
   "services": {
     "refresh": {
-      "name": "Aktualizovat jídelníček",
-      "description": "Okamžitě znovu stáhne jídelníček a přepočítá kalendářové události.",
+      "name": "Refresh menu",
+      "description": "Immediately re-downloads the menu and recomputes calendar events.",
       "fields": {
         "config_entry_id": {
-          "name": "Účet",
-          "description": "Konfigurační záznam integrace Jídelna.cz."
+          "name": "Account",
+          "description": "The Jídelna.cz integration config entry."
         }
       }
     }
   },
   "exceptions": {
     "entry_not_found": {
-      "message": "Konfigurace nebyla nalezena."
+      "message": "Config entry not found."
     },
     "entry_not_loaded": {
-      "message": "Konfigurace není načtená."
+      "message": "Config entry is not loaded."
     }
   }
 }

@@ -257,6 +257,22 @@
       "refresh_done": "Jídelníček byl aktualizován."
     }
   },
+  "selector": {
+    "duration_mode": {
+      "options": {
+        "all_day": "Celodenní událost",
+        "fixed": "Fixní délka",
+        "per_day": "Každý den jiná"
+      }
+    },
+    "allergens": {
+      "options": {
+        "hidden": "Nezobrazovat",
+        "numbers": "Pouze čísla",
+        "names": "Názvy"
+      }
+    }
+  },
   "services": {
     "refresh": {
       "name": "Aktualizovat jídelníček",

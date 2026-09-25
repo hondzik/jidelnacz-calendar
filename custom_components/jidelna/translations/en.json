@@ -257,6 +257,22 @@
       "refresh_done": "The menu has been refreshed."
     }
   },
+  "selector": {
+    "duration_mode": {
+      "options": {
+        "all_day": "All-day event",
+        "fixed": "Fixed duration",
+        "per_day": "Different each day"
+      }
+    },
+    "allergens": {
+      "options": {
+        "hidden": "Hidden",
+        "numbers": "Numbers only",
+        "names": "Names"
+      }
+    }
+  },
   "services": {
     "refresh": {
       "name": "Refresh menu",
