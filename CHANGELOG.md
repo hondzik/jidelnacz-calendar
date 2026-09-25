@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.2...v0.1.3) (2026-09-25)
+
+
+### Bug Fixes
+
+* Update translations and improve key consistency checks ([028fa2b](https://github.com/hondzik/jidelnacz-calendar/commit/028fa2b422fdd1e5065fa241a1b37a1e57b54753))
+
 ## [0.1.2](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.1...v0.1.2) (2026-09-25)
 
 
