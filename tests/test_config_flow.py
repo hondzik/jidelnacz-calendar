@@ -45,9 +45,7 @@ async def _complete_all_day_diner_wizard(hass: HomeAssistant, flow_id: str, mana
     assert result["step_id"] == "diner_content"
     result = await manager.async_configure(flow_id, {})
     assert result["step_id"] == "diner_duration"
-    result = await manager.async_configure(
-        flow_id, {DINER_DURATION_MODE: DURATION_ALL_DAY, "distinguish_weeks": False}
-    )
+    result = await manager.async_configure(flow_id, {DINER_DURATION_MODE: DURATION_ALL_DAY})
     return result
 
 
@@ -163,16 +161,21 @@ class TestFixedDurationWizard:
             )
             result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
             result = await hass.config_entries.flow.async_configure(
-                result["flow_id"],
-                {DINER_DURATION_MODE: DURATION_FIXED, "distinguish_weeks": False},
+                result["flow_id"], {DINER_DURATION_MODE: DURATION_FIXED}
+            )
+            assert result["step_id"] == "diner_weeks"
+            result = await hass.config_entries.flow.async_configure(
+                result["flow_id"], {"distinguish_weeks": False}
             )
             assert result["step_id"] == "diner_times"
 
+            # TimeSelector v HA vždy vrací "HH:MM:SS" (žádný config pro potlačení sekund) —
+            # ověřuje, že se to normalizuje a nerozbije `diner_times_confirm` (strptime "%H:%M").
             result = await hass.config_entries.flow.async_configure(
                 result["flow_id"],
                 {
                     "duration_minutes": 30,
-                    "both": {"mon_from": "11:40", "wed_from": "11:40"},
+                    "both": {"mon_from": "11:40:00", "wed_from": "11:40:00"},
                 },
             )
             assert result["step_id"] == "diner_times_confirm"
@@ -218,7 +221,7 @@ class TestSharedCalendar:
             )
             result = await hass.config_entries.flow.async_configure(result["flow_id"], {})
             result = await hass.config_entries.flow.async_configure(
-                result["flow_id"], {DINER_DURATION_MODE: DURATION_ALL_DAY, "distinguish_weeks": False}
+                result["flow_id"], {DINER_DURATION_MODE: DURATION_ALL_DAY}
             )
 
         assert result["type"] == "create_entry"

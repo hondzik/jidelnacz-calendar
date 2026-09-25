@@ -52,11 +52,12 @@ Nastavení → Zařízení a služby → Přidat integraci → „Jídelna.cz".
 3. Pro každého vybraného strávníka projděte průvodce:
    - **Kalendářová entita** — založit novou, nebo přiřadit k už existující (např. sdílený
      kalendář pro sourozence).
-   - **Obsah události** — volitelný textový prefix názvu jídla a místo.
+   - **Obsah události** — volitelný textový prefix názvu jídla, místo a zobrazení alergenů
+     (nezobrazovat / pouze čísla / názvy).
    - **Délka oběda** — celodenní událost / fixní délka pro všechny dny / každý den jiná.
-   - **Čas oběda** (pokud není celodenní) — volitelně rozlišení sudého a lichého týdne,
-     pro každý všední den čas „od" (a u „každý den jiná" i čas „do" — u fixní délky se
-     dopočítá automaticky).
+   - **Rozlišení týdnů** (pokud není celodenní) — volba, zda rozlišovat sudý a lichý týden.
+   - **Čas oběda** (pokud není celodenní) — pro každý všední den čas „od" (a u „každý den jiná"
+     i čas „do" — u fixní délky se dopočítá automaticky).
 
 Pozdější změny (zapnutí/vypnutí strávníka, úprava rozvrhu, čas aktualizace, ruční
 „Aktualizovat teď") jsou v nastavení integrace (options flow).

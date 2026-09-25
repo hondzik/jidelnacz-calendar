@@ -169,3 +169,20 @@ class TestDescriptionAndUid:
         settings = ev.DinerSettings(duration_mode=ev.DURATION_ALL_DAY, location="ZŠ XY")
         event = ev.build_event(day, UID, settings)
         assert event.location == "ZŠ XY"
+
+    def test_allergens_numbers_shows_raw_codes(self):
+        day = _day(dt.date(2026, 9, 9))
+        settings = ev.DinerSettings(
+            duration_mode=ev.DURATION_ALL_DAY, allergens=ev.ALLERGENS_NUMBERS
+        )
+        event = ev.build_event(day, UID, settings)
+        assert "Polévka: Slepičí (9)" in event.description
+        assert "celer" not in event.description
+
+    def test_allergens_hidden_omits_them_entirely(self):
+        day = _day(dt.date(2026, 9, 9))
+        settings = ev.DinerSettings(
+            duration_mode=ev.DURATION_ALL_DAY, allergens=ev.ALLERGENS_HIDDEN
+        )
+        event = ev.build_event(day, UID, settings)
+        assert event.description == "Polévka: Slepičí\nJídlo: Vepřová kýta ala bažant\nNápoj: voda"

@@ -40,35 +40,64 @@
         "title": "Obsah události",
         "data": {
           "prefix": "Textový prefix názvu jídla",
-          "location": "Místo"
+          "location": "Místo",
+          "allergens": "Zobrazit alergeny"
         }
       },
       "diner_duration": {
         "title": "Délka oběda",
         "data": {
-          "duration_mode": "Délka oběda",
+          "duration_mode": "Délka oběda"
+        }
+      },
+      "diner_weeks": {
+        "title": "Rozlišení týdnů",
+        "data": {
           "distinguish_weeks": "Rozlišovat sudé a liché týdny"
         }
       },
       "diner_times": {
         "title": "Čas oběda",
         "data": {
-          "duration_minutes": "Délka oběda (minuty)",
-          "mon_from": "Pondělí – čas od",
-          "mon_to": "Pondělí – čas do",
-          "tue_from": "Úterý – čas od",
-          "tue_to": "Úterý – čas do",
-          "wed_from": "Středa – čas od",
-          "wed_to": "Středa – čas do",
-          "thu_from": "Čtvrtek – čas od",
-          "thu_to": "Čtvrtek – čas do",
-          "fri_from": "Pátek – čas od",
-          "fri_to": "Pátek – čas do"
+          "duration_minutes": "Délka oběda (minuty)"
         },
         "sections": {
-          "both": { "name": "Sudý/Lichý týden" },
-          "even": { "name": "Sudý týden" },
-          "odd": { "name": "Lichý týden" }
+          "both": { "name": "Sudý/Lichý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } },
+          "even": { "name": "Sudý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } },
+          "odd": { "name": "Lichý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } }
         }
       },
       "diner_times_confirm": {
@@ -142,35 +171,64 @@
         "title": "Obsah události",
         "data": {
           "prefix": "Textový prefix názvu jídla",
-          "location": "Místo"
+          "location": "Místo",
+          "allergens": "Zobrazit alergeny"
         }
       },
       "diner_duration": {
         "title": "Délka oběda",
         "data": {
-          "duration_mode": "Délka oběda",
+          "duration_mode": "Délka oběda"
+        }
+      },
+      "diner_weeks": {
+        "title": "Rozlišení týdnů",
+        "data": {
           "distinguish_weeks": "Rozlišovat sudé a liché týdny"
         }
       },
       "diner_times": {
         "title": "Čas oběda",
         "data": {
-          "duration_minutes": "Délka oběda (minuty)",
-          "mon_from": "Pondělí – čas od",
-          "mon_to": "Pondělí – čas do",
-          "tue_from": "Úterý – čas od",
-          "tue_to": "Úterý – čas do",
-          "wed_from": "Středa – čas od",
-          "wed_to": "Středa – čas do",
-          "thu_from": "Čtvrtek – čas od",
-          "thu_to": "Čtvrtek – čas do",
-          "fri_from": "Pátek – čas od",
-          "fri_to": "Pátek – čas do"
+          "duration_minutes": "Délka oběda (minuty)"
         },
         "sections": {
-          "both": { "name": "Sudý/Lichý týden" },
-          "even": { "name": "Sudý týden" },
-          "odd": { "name": "Lichý týden" }
+          "both": { "name": "Sudý/Lichý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } },
+          "even": { "name": "Sudý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } },
+          "odd": { "name": "Lichý týden", "data": {
+            "mon_from": "Pondělí – čas od",
+            "mon_to": "Pondělí – čas do",
+            "tue_from": "Úterý – čas od",
+            "tue_to": "Úterý – čas do",
+            "wed_from": "Středa – čas od",
+            "wed_to": "Středa – čas do",
+            "thu_from": "Čtvrtek – čas od",
+            "thu_to": "Čtvrtek – čas do",
+            "fri_from": "Pátek – čas od",
+            "fri_to": "Pátek – čas do"
+          } }
         }
       },
       "diner_times_confirm": {

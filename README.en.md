@@ -51,12 +51,13 @@ Settings → Devices & services → Add integration → "Jídelna.cz".
 3. For each selected diner, go through the wizard:
    - **Calendar entity** — create a new one, or assign an existing one (e.g. a shared
      calendar for siblings).
-   - **Event content** — an optional meal-name prefix and a location.
+   - **Event content** — an optional meal-name prefix, a location, and how allergens are
+     shown (hidden / numbers only / names).
    - **Lunch duration** — all-day event / a fixed duration for every day / a different
      duration each day.
-   - **Lunch time** (unless all-day) — optionally distinguish odd/even weeks, a "from" time
-     for each weekday (and, for "different each day", a "to" time — with a fixed duration
-     it's computed automatically).
+   - **Week distinction** (unless all-day) — whether to distinguish odd/even weeks.
+   - **Lunch time** (unless all-day) — a "from" time for each weekday (and, for "different
+     each day", a "to" time — with a fixed duration it's computed automatically).
 
 Later changes (enabling/disabling a diner, editing the schedule, the update time, a manual
 "Refresh now") live in the integration's options flow.

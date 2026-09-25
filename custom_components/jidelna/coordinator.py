@@ -27,6 +27,7 @@ from .const import (
     CONF_UPDATE_MINUTE,
     DEFAULT_UPDATE_HOUR,
     DEFAULT_UPDATE_MINUTE,
+    DINER_ALLERGENS,
     DINER_DISTINGUISH_WEEKS,
     DINER_DURATION_MINUTES,
     DINER_DURATION_MODE,
@@ -38,7 +39,7 @@ from .const import (
     DOMAIN,
     STORAGE_VERSION,
 )
-from .events import DURATION_ALL_DAY, DinerSettings, MealEvent, build_event
+from .events import ALLERGENS_NAMES, DURATION_ALL_DAY, DinerSettings, MealEvent, build_event
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -153,6 +154,7 @@ def _settings_from_config(cfg: dict) -> DinerSettings:
     return DinerSettings(
         prefix=cfg.get(DINER_PREFIX, ""),
         location=cfg.get(DINER_LOCATION, ""),
+        allergens=cfg.get(DINER_ALLERGENS, ALLERGENS_NAMES),
         duration_mode=cfg.get(DINER_DURATION_MODE, DURATION_ALL_DAY),
         duration_minutes=cfg.get(DINER_DURATION_MINUTES),
         distinguish_weeks=cfg.get(DINER_DISTINGUISH_WEEKS, False),

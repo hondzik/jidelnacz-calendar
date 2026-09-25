@@ -40,35 +40,64 @@
         "title": "Event content",
         "data": {
           "prefix": "Meal name prefix",
-          "location": "Location"
+          "location": "Location",
+          "allergens": "Show allergens"
         }
       },
       "diner_duration": {
         "title": "Lunch duration",
         "data": {
-          "duration_mode": "Lunch duration",
+          "duration_mode": "Lunch duration"
+        }
+      },
+      "diner_weeks": {
+        "title": "Week distinction",
+        "data": {
           "distinguish_weeks": "Distinguish odd/even weeks"
         }
       },
       "diner_times": {
         "title": "Lunch time",
         "data": {
-          "duration_minutes": "Lunch duration (minutes)",
-          "mon_from": "Monday – from",
-          "mon_to": "Monday – to",
-          "tue_from": "Tuesday – from",
-          "tue_to": "Tuesday – to",
-          "wed_from": "Wednesday – from",
-          "wed_to": "Wednesday – to",
-          "thu_from": "Thursday – from",
-          "thu_to": "Thursday – to",
-          "fri_from": "Friday – from",
-          "fri_to": "Friday – to"
+          "duration_minutes": "Lunch duration (minutes)"
         },
         "sections": {
-          "both": { "name": "Odd/Even week" },
-          "even": { "name": "Even week" },
-          "odd": { "name": "Odd week" }
+          "both": { "name": "Odd/Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } },
+          "even": { "name": "Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } },
+          "odd": { "name": "Odd week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } }
         }
       },
       "diner_times_confirm": {
@@ -142,35 +171,64 @@
         "title": "Event content",
         "data": {
           "prefix": "Meal name prefix",
-          "location": "Location"
+          "location": "Location",
+          "allergens": "Show allergens"
         }
       },
       "diner_duration": {
         "title": "Lunch duration",
         "data": {
-          "duration_mode": "Lunch duration",
+          "duration_mode": "Lunch duration"
+        }
+      },
+      "diner_weeks": {
+        "title": "Week distinction",
+        "data": {
           "distinguish_weeks": "Distinguish odd/even weeks"
         }
       },
       "diner_times": {
         "title": "Lunch time",
         "data": {
-          "duration_minutes": "Lunch duration (minutes)",
-          "mon_from": "Monday – from",
-          "mon_to": "Monday – to",
-          "tue_from": "Tuesday – from",
-          "tue_to": "Tuesday – to",
-          "wed_from": "Wednesday – from",
-          "wed_to": "Wednesday – to",
-          "thu_from": "Thursday – from",
-          "thu_to": "Thursday – to",
-          "fri_from": "Friday – from",
-          "fri_to": "Friday – to"
+          "duration_minutes": "Lunch duration (minutes)"
         },
         "sections": {
-          "both": { "name": "Odd/Even week" },
-          "even": { "name": "Even week" },
-          "odd": { "name": "Odd week" }
+          "both": { "name": "Odd/Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } },
+          "even": { "name": "Even week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } },
+          "odd": { "name": "Odd week", "data": {
+            "mon_from": "Monday – from",
+            "mon_to": "Monday – to",
+            "tue_from": "Tuesday – from",
+            "tue_to": "Tuesday – to",
+            "wed_from": "Wednesday – from",
+            "wed_to": "Wednesday – to",
+            "thu_from": "Thursday – from",
+            "thu_to": "Thursday – to",
+            "fri_from": "Friday – from",
+            "fri_to": "Friday – to"
+          } }
         }
       },
       "diner_times_confirm": {

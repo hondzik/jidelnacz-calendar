@@ -26,6 +26,10 @@ WEEK_ODD = "odd"
 
 WEEKDAYS = ("mon", "tue", "wed", "thu", "fri")
 
+ALLERGENS_HIDDEN = "hidden"
+ALLERGENS_NUMBERS = "numbers"
+ALLERGENS_NAMES = "names"
+
 DEFAULT_EVENT_MINUTES = 30  # fallback délka, když "čas do" chybí/je neplatný
 
 
@@ -35,6 +39,7 @@ class DinerSettings:
 
     prefix: str = ""
     location: str = ""
+    allergens: str = ALLERGENS_NAMES
     duration_mode: str = DURATION_ALL_DAY
     duration_minutes: int | None = None
     distinguish_weeks: bool = False
@@ -64,7 +69,7 @@ def build_event(day: Day, uid: str, settings: DinerSettings) -> MealEvent | None
         return None
 
     summary = f"{settings.prefix}{_hlavni_jidlo(varianta)}"
-    description = _describe(varianta)
+    description = _describe(varianta, settings.allergens)
     event_uid = f"{uid}_{day.datum.isoformat()}"
 
     if settings.duration_mode == DURATION_ALL_DAY or day.datum.weekday() > 4:
@@ -130,12 +135,17 @@ def _hlavni_jidlo(varianta: MenuVariant) -> str:
     return hlavni.jidlo
 
 
-def _describe(varianta: MenuVariant) -> str:
+def _describe(varianta: MenuVariant, allergens: str = ALLERGENS_NAMES) -> str:
     lines = []
     for chod in varianta.chody:
-        alergeny = ", ".join(ALERGENY.get(a, a) for a in chod.alergeny)
         line = f"{chod.nazev}: {chod.jidlo}"
-        if alergeny:
-            line += f" ({alergeny})"
+        if allergens == ALLERGENS_NUMBERS:
+            popis = ", ".join(chod.alergeny)
+        elif allergens == ALLERGENS_NAMES:
+            popis = ", ".join(ALERGENY.get(a, a) for a in chod.alergeny)
+        else:
+            popis = ""
+        if popis:
+            line += f" ({popis})"
         lines.append(line)
     return "\n".join(lines)

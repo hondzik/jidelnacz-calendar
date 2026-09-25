@@ -48,6 +48,7 @@ from .const import (
     CONF_UPDATE_MINUTE,
     DEFAULT_UPDATE_HOUR,
     DEFAULT_UPDATE_MINUTE,
+    DINER_ALLERGENS,
     DINER_CALENDAR_ID,
     DINER_DISTINGUISH_WEEKS,
     DINER_DURATION_MINUTES,
@@ -62,6 +63,9 @@ from .const import (
     SERVICE_REFRESH,
 )
 from .events import (
+    ALLERGENS_HIDDEN,
+    ALLERGENS_NAMES,
+    ALLERGENS_NUMBERS,
     DURATION_ALL_DAY,
     DURATION_FIXED,
     DURATION_PER_DAY,
@@ -79,6 +83,12 @@ DURATION_OPTIONS = [
     {"value": DURATION_ALL_DAY, "label": "Celodenní událost"},
     {"value": DURATION_FIXED, "label": "Fixní délka"},
     {"value": DURATION_PER_DAY, "label": "Každý den jiná"},
+]
+
+ALLERGENS_OPTIONS = [
+    {"value": ALLERGENS_HIDDEN, "label": "Nezobrazovat"},
+    {"value": ALLERGENS_NUMBERS, "label": "Pouze čísla"},
+    {"value": ALLERGENS_NAMES, "label": "Názvy"},
 ]
 
 WEEK_LABELS = {WEEK_BOTH: "Sudý/Lichý týden", WEEK_EVEN: "Sudý týden", WEEK_ODD: "Lichý týden"}
@@ -130,6 +140,12 @@ def _login_only(login_id: str, heslo: str) -> None:
 def _split_time(value: str) -> tuple[int, int]:
     hour, minute, *_rest = value.split(":")
     return int(hour), int(minute)
+
+
+def _hhmm(value: str) -> str:
+    """Normalizuje čas selektoru (vždy vrací "HH:MM:SS") na "HH:MM"."""
+    hour, minute = _split_time(value)
+    return f"{hour:02d}:{minute:02d}"
 
 
 def _merged_options(entry: config_entries.ConfigEntry, **updates: Any) -> dict[str, Any]:
@@ -231,6 +247,7 @@ class _DinerWizardMixin:
         if user_input is not None:
             self._draft[DINER_PREFIX] = user_input.get(DINER_PREFIX, "")
             self._draft[DINER_LOCATION] = user_input.get(DINER_LOCATION, "")
+            self._draft[DINER_ALLERGENS] = user_input[DINER_ALLERGENS]
             return await self.async_step_diner_duration()
 
         current = self._wizard_existing.get(self._current_uid, {})
@@ -238,6 +255,13 @@ class _DinerWizardMixin:
             {
                 vol.Optional(DINER_PREFIX, default=current.get(DINER_PREFIX, "Oběd: ")): str,
                 vol.Optional(DINER_LOCATION, default=current.get(DINER_LOCATION, "")): str,
+                vol.Required(
+                    DINER_ALLERGENS, default=current.get(DINER_ALLERGENS, ALLERGENS_NAMES)
+                ): selector.SelectSelector(
+                    selector.SelectSelectorConfig(
+                        options=ALLERGENS_OPTIONS, mode=selector.SelectSelectorMode.LIST
+                    )
+                ),
             }
         )
         return self.async_show_form(step_id="diner_content", data_schema=schema)
@@ -245,12 +269,12 @@ class _DinerWizardMixin:
     async def async_step_diner_duration(self, user_input: dict[str, Any] | None = None) -> FlowResult:
         if user_input is not None:
             self._draft[DINER_DURATION_MODE] = user_input[DINER_DURATION_MODE]
-            self._draft[DINER_DISTINGUISH_WEEKS] = user_input.get(DINER_DISTINGUISH_WEEKS, False)
             if user_input[DINER_DURATION_MODE] == DURATION_ALL_DAY:
+                self._draft[DINER_DISTINGUISH_WEEKS] = False
                 self._draft[DINER_SCHEDULE] = {}
                 self._draft[DINER_DURATION_MINUTES] = None
                 return await self._wizard_finish_diner()
-            return await self.async_step_diner_times()
+            return await self.async_step_diner_weeks()
 
         current = self._wizard_existing.get(self._current_uid, {})
         schema = vol.Schema(
@@ -262,12 +286,24 @@ class _DinerWizardMixin:
                         options=DURATION_OPTIONS, mode=selector.SelectSelectorMode.LIST
                     )
                 ),
+            }
+        )
+        return self.async_show_form(step_id="diner_duration", data_schema=schema)
+
+    async def async_step_diner_weeks(self, user_input: dict[str, Any] | None = None) -> FlowResult:
+        if user_input is not None:
+            self._draft[DINER_DISTINGUISH_WEEKS] = user_input[DINER_DISTINGUISH_WEEKS]
+            return await self.async_step_diner_times()
+
+        current = self._wizard_existing.get(self._current_uid, {})
+        schema = vol.Schema(
+            {
                 vol.Required(
                     DINER_DISTINGUISH_WEEKS, default=current.get(DINER_DISTINGUISH_WEEKS, False)
                 ): bool,
             }
         )
-        return self.async_show_form(step_id="diner_duration", data_schema=schema)
+        return self.async_show_form(step_id="diner_weeks", data_schema=schema)
 
     async def async_step_diner_times(self, user_input: dict[str, Any] | None = None) -> FlowResult:
         duration_mode = self._draft[DINER_DURATION_MODE]
@@ -284,12 +320,14 @@ class _DinerWizardMixin:
                 section_data = user_input[week_key]
                 days: dict[str, dict[str, str | None]] = {}
                 for day in WEEKDAYS:
-                    time_from = section_data.get(f"{day}_from")
-                    if not time_from:
+                    time_from_raw = section_data.get(f"{day}_from")
+                    if not time_from_raw:
                         continue
+                    time_from = _hhmm(time_from_raw)
                     item: dict[str, str | None] = {"from": time_from}
                     if duration_mode == DURATION_PER_DAY:
-                        time_to = section_data.get(f"{day}_to")
+                        time_to_raw = section_data.get(f"{day}_to")
+                        time_to = _hhmm(time_to_raw) if time_to_raw else None
                         if time_to and time_to <= time_from:
                             errors["base"] = "time_to_before_from"
                         item["to"] = time_to
