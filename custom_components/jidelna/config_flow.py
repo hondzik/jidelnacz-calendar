@@ -245,8 +245,8 @@ class _DinerWizardMixin:
         current = self._wizard_existing.get(self._current_uid, {})
         schema = vol.Schema(
             {
-                vol.Optional(DINER_PREFIX, default=current.get(DINER_PREFIX, "Oběd: ")): str,
-                vol.Optional(DINER_LOCATION, default=current.get(DINER_LOCATION, "")): str,
+                vol.Optional(DINER_PREFIX): str,
+                vol.Optional(DINER_LOCATION): str,
                 vol.Required(
                     DINER_ALLERGENS, default=current.get(DINER_ALLERGENS, ALLERGENS_NAMES)
                 ): selector.SelectSelector(
@@ -258,7 +258,14 @@ class _DinerWizardMixin:
                 ),
             }
         )
-        return self.async_show_form(step_id="diner_content", data_schema=schema)
+        suggested = {
+            DINER_PREFIX: current.get(DINER_PREFIX, "Oběd: "),
+            DINER_LOCATION: current.get(DINER_LOCATION, ""),
+        }
+        return self.async_show_form(
+            step_id="diner_content",
+            data_schema=self.add_suggested_values_to_schema(schema, suggested),
+        )
 
     async def async_step_diner_duration(self, user_input: dict[str, Any] | None = None) -> FlowResult:
         if user_input is not None:

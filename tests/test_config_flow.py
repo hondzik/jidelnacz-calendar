@@ -24,6 +24,8 @@ from custom_components.jidelna.const import (
     DINER_CALENDAR_ID,
     DINER_DURATION_MODE,
     DINER_ENABLED,
+    DINER_LOCATION,
+    DINER_PREFIX,
     DINER_SCHEDULE,
     DOMAIN,
 )
@@ -362,6 +364,67 @@ class TestOptionsFlow:
 
         assert result["type"] == "create_entry"
         assert result["data"][CONF_DINERS]["3632661"][DINER_ENABLED] is True
+
+    async def test_clearing_prefix_and_location_saves_as_empty(self, hass: HomeAssistant):
+        # Regrese: `vol.Optional(key, default=puvodni_hodnota)` způsobovalo, že HA
+        # frontend při vymazání textového pole klíč z POSTu vynechá a voluptuous
+        # pak starou hodnotu tiše vrátí zpět — uživatel prefix/location nikdy
+        # nevymazal. `diner_content` teď pro tato pole `default` nepoužívá.
+        entry = MockConfigEntry(
+            domain=DOMAIN,
+            unique_id="2803121",
+            data={CONF_LOGIN: "2803121", CONF_HESLO: "heslo"},
+            options={
+                CONF_UPDATE_HOUR: 5,
+                "update_minute": 0,
+                CONF_CALENDARS: {"obedy_anna": {"name": "Obědy – Anna"}},
+                CONF_DINERS: {
+                    "3632660": {
+                        "name": "Anna Nováková",
+                        "regc": "28",
+                        DINER_ENABLED: True,
+                        DINER_CALENDAR_ID: "obedy_anna",
+                        DINER_PREFIX: "Oběd: ",
+                        DINER_LOCATION: "ZŠ XY",
+                        DINER_DURATION_MODE: DURATION_ALL_DAY,
+                        DINER_SCHEDULE: {},
+                    }
+                },
+            },
+        )
+        entry.add_to_hass(hass)
+
+        result = await hass.config_entries.options.async_init(entry.entry_id)
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"next_step_id": "diner_settings"}
+        )
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"diner": "3632660"}
+        )
+        assert result["type"] == "menu"
+        assert result["step_id"] == "diner_calendar"
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"next_step_id": "diner_calendar_pick"}
+        )
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {DINER_CALENDAR_ID: "obedy_anna"}
+        )
+        assert result["step_id"] == "diner_content"
+
+        # Simuluje vymazané textové pole — HA frontend takový klíč u nepovinného
+        # pole v POSTu vynechá, `allergens` (Required select) je vždy přítomné.
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {"allergens": "names"}
+        )
+        assert result["step_id"] == "diner_duration"
+        result = await hass.config_entries.options.async_configure(
+            result["flow_id"], {DINER_DURATION_MODE: DURATION_ALL_DAY}
+        )
+
+        assert result["type"] == "create_entry"
+        diner = result["data"][CONF_DINERS]["3632660"]
+        assert diner[DINER_PREFIX] == ""
+        assert diner[DINER_LOCATION] == ""
 
     async def test_diner_settings_no_diners_aborts(self, hass: HomeAssistant):
         entry = MockConfigEntry(
