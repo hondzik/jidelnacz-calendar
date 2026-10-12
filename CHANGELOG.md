@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.4...v1.0.0) (2026-10-12)
+
+
+### Bug Fixes
+
+* remove requests from manifest (bundled with Home Assistant core) ([311de3f](https://github.com/hondzik/jidelnacz-calendar/commit/311de3f03dee5a573efdfbd50c59b43483e5b156))
+
 ## [0.1.4](https://github.com/hondzik/jidelnacz-calendar/compare/v0.1.3...v0.1.4) (2026-09-25)
 
 
